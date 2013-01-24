@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- You need to add ng-app to the html tag to get angluar to handle the page. -->
+<html ng-app="myApp">
+  <header>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.js"></script>
+    
+    <script language="javascript" type="text/javascript">
+      //You need to add myApp to a module and provide access to any needed services.
+      angular.module('myApp', []);
+      
+      function MyController($scope){
+      $scope.name=[];
+       $scope.messages=[];
+        $scope.add=function(){
+          
+         $scope.messages.push({"username":$scope.name,"message":$scope.newMessage});
+         done:false;
+        
+        };
+        $scope.remove=function(){
+          
+         if($scope.value1=true){
+            $scope.messages.splice(index,);
+         
+        };
+     }
+    </script>
+  </header>
+  
+  <body bgcolor="yellow", ng-controller="MyController">
+  Name: <input type="text" ng-model="name"><br>
+  Leave a message:<input type="text" ng-model="newMessage"><br>
+
+  <input type="submit" ng-click="add()" value="save">
+   <input type="submit" ng-click="remove()" value="delete">
+    <ul style="list-style-type:none">
+      <li ng-repeat="things in messages">
+       <input type="checkbox" ng-model="value1"> {{things.username}}: {{things.message}}
+      </li>
+    </ul>
+   
+  </body>
+
+</html>
